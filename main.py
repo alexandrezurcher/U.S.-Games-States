@@ -38,10 +38,13 @@ while len(correct_answers) <= 50:
         t.write(arg=answer_state, align='center', font=("Courier", 8, "normal"))
 
 # States missing
-missing_states = []
-for state in all_states:
-    if state not in correct_answers:
-        missing_states.append(state)
+#missing_states = []
+# for state in all_states:
+#     if state not in correct_answers:
+#         missing_states.append(state)
+
+# put 4 lines in code in just one!!!
+missing_states = [state for state in all_states if state not in correct_answers]
 
 new_data = pandas.DataFrame(missing_states)
 new_data.to_csv("states_to_learn.csv")
